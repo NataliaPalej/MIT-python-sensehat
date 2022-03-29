@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-#from flask import render_template, request
+from flask import render_template, request
 from sense_hat import SenseHat
-#import RPi.GPIO as gpio
+import RPi.GPIO as gpio
 from flask import Flask
 import os, time
  
@@ -33,7 +33,7 @@ def temp():
     #creating temp variable and rounding it to 2 decimal places
     temp = round(sense.get_temperature(), 2)
     #rounding the temp_value that will be used to light up pixels
-    temp_value = round(temp)
+    temp_value = round(temp, 0)
     #setting temerature to light up equivalent amount of pixels
     pixels = [red if i < temp_value else white for i in range(64)]
     sense.set_pixels(pixels)
@@ -48,7 +48,7 @@ def humidity():
     humidity_value = 64 * humidity / 100
     pixels = [blue if i < humidity_value else white for i in range(64)]
     sense.set_pixels(pixels)
-    return("Humidity is: " + str(humidity) + "%")
+    return("Humidity is: " + str(humidity))
     
 @app.route("/pressure/")
 def pressure():
