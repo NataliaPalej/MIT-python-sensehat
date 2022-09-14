@@ -7,7 +7,7 @@ Buttons have specific action to complete:
 
   *colour-named buttons are changing raspberry sense-hat display to corresponding colour
   
-  *temperature reads currect temperature using sensor, lights up equivalent amount of pixels and displays the value in text box
+  *temperature reads current temperature using sensor, lights up equivalent amount of pixels and displays the value in text box
   
   *humidity and pressure works as temperature
   
